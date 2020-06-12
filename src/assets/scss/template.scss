@@ -1,0 +1,20 @@
+// variables and mixins
+@import "./template/variables";
+@import "./template/mixins";
+@import "./template/shadows";
+
+// plugin css
+@import "./template/plugins/plugin-nouislider";
+@import "./template/plugins/plugin-perfect-scrollbar";
+@import "./template/plugins/plugin-react-datetime";
+@import "./template/plugins/plugin-react-bootstrap-sweetalert";
+@import "./template/plugins/plugin-react-chartist";
+@import "./template/plugins/plugin-react-big-calendar";
+@import "./template/plugins/plugin-react-jvectormap";
+@import "./template/plugins/plugin-react-table";
+@import "./template/plugins/plugin-react-tagsinput";
+
+// Core CSS
+@import "./template/misc";
+@import "./template/fileupload";
+@import "./template/fixed-plugin";
