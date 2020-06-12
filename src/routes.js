@@ -6,6 +6,8 @@ export const getAllRoutes = () => {
   return sessionService
     .loadUser()
     .then((user) => {
+      console.log(user);
+
       const profile = Number.parseInt(user.profile_id, 10);
 
       let dashRoutes = [];

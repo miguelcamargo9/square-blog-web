@@ -13,7 +13,7 @@ export const defaultRoutes = [
     mini: "RU",
     component: RegisterUserForm,
     layout: "/auth",
-    invisible: true,
+    logout: true,
   },
   ...generaFinallRoutes,
 ];

@@ -1,5 +1,6 @@
 //Users
 import RegisterUserForm from "../views/Users/RegisterUserForm";
+import CreatePostForm from "../views/Posts/CreatePostForm";
 
 // @material-ui/icons
 import SpeakerNotes from "@material-ui/icons/SpeakerNotes";
@@ -18,7 +19,7 @@ export const bloggerRoutes = [
         path: "/create-post",
         name: "Create Post",
         mini: "CP",
-        component: RegisterUserForm,
+        component: CreatePostForm,
         layout: "/admin",
       },
     ],

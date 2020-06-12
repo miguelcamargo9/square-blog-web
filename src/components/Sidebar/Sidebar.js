@@ -114,6 +114,12 @@ class Sidebar extends React.Component {
       if (prop.invisible) {
         return null;
       }
+      if (prop.logout && this.state.user.name) {
+        return null;
+      }
+      if (prop.login && !this.state.user.name) {
+        return null;
+      }
       if (prop.collapse) {
         var st = {};
         st[prop["state"]] = !this.state[prop.state];
@@ -285,7 +291,7 @@ class Sidebar extends React.Component {
               onClick={() => this.openCollapse("openAvatar")}
             >
               <ListItemText
-                primary={this.state.user.name}
+                primary={this.state.user.name ? this.state.user.name : "Guest"}
                 secondary={
                   <b
                     className={
@@ -305,12 +311,12 @@ class Sidebar extends React.Component {
               <List className={classes.list + " " + classes.collapseList}>
                 <ListItem className={classes.collapseItem}>
                   <NavLink
-                    to="/admin/profile-user"
+                    to="/admin/posts-user"
                     className={classes.itemLink + " " + classes.userCollapseLinks}
                   >
                     <span className={collapseItemMini}>MP</span>
                     <ListItemText
-                      primary={"My profile"}
+                      primary={"My Posts"}
                       disableTypography={true}
                       className={collapseItemText}
                     />

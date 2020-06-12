@@ -16,6 +16,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 import PersonAdd from "@material-ui/icons/PersonAdd";
+import Home from "@material-ui/icons/Home";
 import Fingerprint from "@material-ui/icons/Fingerprint";
 
 // core components
@@ -49,6 +50,21 @@ class AuthNavbar extends React.Component {
     });
     var list = (
       <List className={classes.list}>
+        <ListItem className={classes.listItem}>
+          <NavLink
+            to={"/admin/home"}
+            className={cx(classes.navLink, {
+              [classes.navLinkActive]: this.activeRoute("/admin/home"),
+            })}
+          >
+            <Home className={classes.listItemIcon} />
+            <ListItemText
+              primary={"Home"}
+              disableTypography={true}
+              className={classes.listItemText}
+            />
+          </NavLink>
+        </ListItem>
         <ListItem className={classes.listItem}>
           <NavLink
             to={"/auth/register-page"}

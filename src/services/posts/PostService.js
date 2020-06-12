@@ -28,8 +28,8 @@ export const insertPostService = (postInfo) => {
     .catch((err) => console.log(err));
 };
 
-export const viewAllPostService = () => {
-  const ALL_POST_API_ENDPOINT = `${SERVER_URL}/api/posts/desc`;
+export const viewAllPostService = (order) => {
+  const ALL_POST_API_ENDPOINT = `${SERVER_URL}/api/posts/${order}`;
 
   return axios
     .get(ALL_POST_API_ENDPOINT)
@@ -54,4 +54,43 @@ export const generatePostService = () => {
       console.log(error);
       return error;
     });
+};
+
+export const viewPostByDateService = (dataFilter) => {
+  const POST_BY_DATE_API_ENDPOINT = `${SERVER_URL}/api/posts/date`;
+
+  return axios
+    .post(POST_BY_DATE_API_ENDPOINT, dataFilter)
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      console.log(error);
+      return error;
+    });
+};
+
+export const getPostByUserService = () => {
+  return sessionService
+    .loadSession()
+    .then((currentSession) => {
+      const GET_POST_BY_USER_API_ENDPOINT = `${SERVER_URL}/api/postuser`;
+
+      const headers = {
+        headers: {
+          Authorization: `Bearer ${currentSession.access_token}`,
+        },
+      };
+
+      return axios
+        .get(GET_POST_BY_USER_API_ENDPOINT, headers)
+        .then((response) => {
+          return response;
+        })
+        .catch((error) => {
+          console.log(error);
+          return error;
+        });
+    })
+    .catch((err) => console.log(err));
 };

@@ -1,6 +1,6 @@
 //Users
-import RegisterUserForm from "../views/Users/RegisterUserForm";
 import GeneratePosts from "../views/Posts/GeneratePosts";
+import CreatePostForm from "../views/Posts/CreatePostForm";
 
 // @material-ui/icons
 import SpeakerNotes from "@material-ui/icons/SpeakerNotes";
@@ -19,7 +19,7 @@ export const adminRoutes = [
         path: "/create-post",
         name: "Create Post",
         mini: "CP",
-        component: RegisterUserForm,
+        component: CreatePostForm,
         layout: "/admin",
       },
       {
@@ -30,14 +30,6 @@ export const adminRoutes = [
         layout: "/admin",
       },
     ],
-  },
-  {
-    path: "/register-page",
-    name: "User Register",
-    mini: "RU",
-    component: RegisterUserForm,
-    layout: "/auth",
-    invisible: true,
   },
   ...generaFinallRoutes,
 ];
